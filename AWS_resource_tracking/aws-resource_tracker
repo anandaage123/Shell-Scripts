@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#############
+# Author: Anand Aage
+# Date: 30 August
+#
+# Version: v1
+# This script will report the AWS resource usage.
+##########
+
+set -x
+set -e
+
+OUTPUT_FILE="resource_tracker.txt"
+
+# list S3 buckets
+echo 'Print list of S3 buckets' > $OUTPUT_FILE
+aws s3 ls >> $OUTPUT_FILE
+
+# list EC2 instances
+echo 'Print list of EC2 instances' >> $OUTPUT_FILE
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId' >> $OUTPUT_FILE
+
+# list AWS Lambda functions
+echo 'Print list of Lambda functions' >> $OUTPUT_FILE
+aws lambda list-functions >> $OUTPUT_FILE
+
+# list IAM Users
+echo 'Print list of IAM users' >> $OUTPUT_FILE
+aws iam list-users >> $OUTPUT_FILE
+
