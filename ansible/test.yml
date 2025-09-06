@@ -1,0 +1,12 @@
+- hosts: local
+  become: no
+  tasks:
+    - name: Install htop
+      community.general.homebrew:
+        name: htop
+        state: present
+    - name : Install git
+      community.general.homebrew:
+        name: git
+        state: present
+

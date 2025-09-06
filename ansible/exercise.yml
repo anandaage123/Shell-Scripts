@@ -1,0 +1,23 @@
+- hosts: local
+  tasks:
+    - name: Create a directory in current folder
+      file:
+        path: ./ansible_practice
+        state: directory
+        mode: '0755'
+
+    - name: Create a test file inside that directory
+      copy:
+        content: "Hello from Ansible!\n"
+        dest: ./ansible_practice/hello.txt
+        mode: '0644'
+
+    - name: List contents of the directory
+      command: ls -l ./ansible_practice
+      register: dir_contents
+
+    - name: Show the output
+      debug:
+        var: dir_contents.stdout
+
+
