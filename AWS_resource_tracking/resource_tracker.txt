@@ -1,0 +1,19 @@
+Print list of S3 buckets
+2025-08-30 14:54:53 anandaages3bucket
+Print list of EC2 instances
+"i-0183d5dc783e5ebdd"
+Print list of Lambda functions
+{
+    "Functions": []
+}
+Print list of IAM users
+{
+    "Users": [
+        {
+            "UserName": "Anand",
+            "UserId": "AIDA5Q3CK7CPMNXJM77PM",
+            "Arn": "arn:aws:iam::929529788574:user/Anand",
+            "CreateDate": "2025-04-16T20:42:06+00:00"
+        }
+    ]
+}
