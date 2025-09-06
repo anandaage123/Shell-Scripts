@@ -10,6 +10,7 @@ Print list of IAM users
 {
     "Users": [
         {
+            "Path": "/",
             "UserName": "Anand",
             "UserId": "AIDA5Q3CK7CPMNXJM77PM",
             "Arn": "arn:aws:iam::929529788574:user/Anand",
